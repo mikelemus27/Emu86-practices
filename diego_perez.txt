@@ -18,3 +18,6 @@ _start:
     mov eax, 1                 ; Número de syscall para salir
     xor ebx, ebx               ; Código de salida 0
     int 0x80   
+
+Hola compañeritos 
+Xitlali bb
