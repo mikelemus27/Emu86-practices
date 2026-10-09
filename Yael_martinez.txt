@@ -1,1 +1,11 @@
-hola soy la cabra
+section .text
+    global _start
+
+_start:
+    mov al, 5       ; Carga el número 5 en el registro AL
+    add al, 3       ; Suma 3 al registro AL (AL ahora vale 8)
+
+    ; Salir del programa (sys_exit en Linux x86)
+    mov eax, 1      ; Syscall de salida
+    xor ebx, ebx    ; Código de retorno 0
+    int 0x80
