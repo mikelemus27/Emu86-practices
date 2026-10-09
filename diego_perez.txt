@@ -1,1 +1,20 @@
 Hola mundo soy Diego
+section .data
+    msg db "Hola Mundo", 0x0a  ; Mensaje con salto de línea
+    len equ $ - msg            ; Longitud del mensaje
+
+section .text
+    global _start
+
+_start:
+    ; Llamada al sistema sys_write
+    mov eax, 4                 ; Número de syscall
+    mov ebx, 1                 ; Descriptor de archivo (stdout)
+    mov ecx, msg               ; Dirección del mensaje
+    mov edx, len               ; Longitud
+    int 0x80                   ; Interrupción al kernel
+
+    ; Llamada al sistema sys_exit
+    mov eax, 1                 ; Número de syscall para salir
+    xor ebx, ebx               ; Código de salida 0
+    int 0x80   
