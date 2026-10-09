@@ -1,1 +1,19 @@
-hola mundo soy kevin
+section .data
+    msg db 'Hola Mundo!', 0x0A
+    len equ $ - msg
+
+section .text
+    global _start
+
+_start:
+    ; sys_write(stdout, msg, len)
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, msg
+    mov edx, len
+    int 0x80
+
+    ; sys_exit(0)
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80   
