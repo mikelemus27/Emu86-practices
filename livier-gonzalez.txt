@@ -1,1 +1,18 @@
 hola mundo
+section .data
+    mensaje db "Hola Mundo", 10
+    longitud equ $ - mensaje
+
+section .text
+    global _start
+
+_start:
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, mensaje
+    mov rdx, longitud
+    syscall
+
+    mov rax, 60
+    mov rdi, 0
+    syscall
