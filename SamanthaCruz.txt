@@ -1,1 +1,15 @@
 hola mundo
+.MODEL SMALL
+.STACK
+.DATA
+    CADENA DB 'Hola Mundo!$', 13, 10 ; 13,10 es retorno de carro y salto de línea
+.CODE
+PROGRAMA:
+    MOV AX, @DATA
+    MOV DS, AX
+    MOV DX, OFFSET CADENA
+    MOV AH, 9     ; Función imprimir cadena
+    INT 21H
+    MOV AX, 4C00H ; Finalizar programa
+    INT 21H
+END PROGRAMA   
