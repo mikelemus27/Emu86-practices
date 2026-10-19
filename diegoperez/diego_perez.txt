@@ -20,4 +20,6 @@ _start:
     int 0x80   
 
 Hola compañeritos 
-Xitlali bb
+Xitlali 
+
+Adios mundo muejejeje
