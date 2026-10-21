@@ -1,0 +1,5 @@
+mov ax, -100
+xor dx, dx
+cdq           ; Extiende el signo de AX a DX (preparación para IDIV)
+mov bx, 5
+idiv bx       ; Cociente en AX (-20), Residuo en DX (0)   
